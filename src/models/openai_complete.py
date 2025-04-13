@@ -48,6 +48,7 @@ def get_cost_per_1k_tokens(model_name, training=False):
     # source: https://openai.com/pricing
     base_inference_price_dict = {
         "ada": 0.0004,
+        "babbage-002": 100, #ADDED
         "babbage": 0.0005,
         "curie": 0.0020,
         "davinci": 0.02,
@@ -58,7 +59,8 @@ def get_cost_per_1k_tokens(model_name, training=False):
         "text-curie-001": 0.0020,
         "text-davinci-001": 0.02,
         "text-davinci-002": 0.02,
-        "text-davinci-003": 0.02,
+        #"text-davinci-003": 0.02, REPLACED with gpt-3.5-turbo-instruct bc of Jan 2024 deprecation
+        "gpt-3.5-turbo-instruct": 0.02,
         "gpt-3.5-turbo": 0.002,
         # They charge 2x that per output token, so this metric is a bit off
         "gpt-4": 0.03,

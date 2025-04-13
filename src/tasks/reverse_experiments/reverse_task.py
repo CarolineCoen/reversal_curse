@@ -82,7 +82,7 @@ def generate_alt_examples(name: str, description: str, templates: List[str], p2d
     """
     time.sleep(5)
     prompts = [generate_prompt_to_fill_template(template, description, p2d) for template in templates]
-    model = OpenAIAPI(model_name="text-davinci-003", max_parallel=len(prompts))
+    model = OpenAIAPI(model_name="gpt-3.5-turbo-instruct", max_parallel=len(prompts)) # REPLACED
 
     # generate examples
     descriptions = model.generate(prompts, stop_string="\n", temperature=0)
