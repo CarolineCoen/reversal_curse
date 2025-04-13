@@ -18,6 +18,8 @@ tests/data/output
 ICIL
 .DS_Store
 settings.json
+nlp
+nlp/
 
 /models
 /ckpts
